@@ -5,10 +5,11 @@ public class Main {
   public static BufferedWriter out = new BufferedWriter(new OutputStreamWriter(System.out));
 
   public static void main(String[] args) throws Exception {
-    String cad = in.readLine().trim();
+    String cad = in.readLine();
     int sum;
-    while (!cad.isEmpty()) {
+    while (cad != null) {
 
+      cad = cad.trim();
       sum = 0;
       int base = Integer.parseInt(cad);
       for (String n: in.readLine().trim().split(" ")) {
@@ -16,7 +17,7 @@ public class Main {
       }
 
       out.write(sum + "\n");
-      cad = in.readLine().trim();
+      cad = in.readLine();
     }
     out.close();
   }
